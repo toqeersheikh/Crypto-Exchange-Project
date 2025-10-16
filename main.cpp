@@ -3,43 +3,30 @@ using namespace std;
 // namespace: contains lots of ready made components like: functions and classes etc 
 // a cross platform library
 
-int main()
+void printMenu()
 {
-	bool condition=true;
-	//putting everything in a while loop to run an infinite loop so that our application keep running
-	while(condition)
-	{
-		//Print Menu
+	//Print Menu
 		
 		// 1. Print Help:
-		
-		cout<<"1: Print Help"<<endl;
-		
+		cout<<"1: Print Help"<<endl;	
 		//2. Print Exchange Stats:
-		
 		cout<<"2: Print exhange Stats"<<endl;
-		
 		//3. Make an offer:
-		
 		cout<<"3: Make an offer"<<endl;
-		
 		//4. Make a bid:
-		
 		cout<<"4: Make a bid"<<endl;
-		
 		//5. Print Wallet:
-		
 		cout<<"5: Print Wallet"<<endl;
-		
 		//6. Continue:
-		
 		cout<<"6: Continue"<<endl;
-		
 	    //	7. Exit:
 		cout<<"7: Exit"<<endl;
 		
-		cout<<"===================="<<endl;
-		cout<<"Type in an option between: 1 to 7"<<endl;
+}
+
+int getUserOption()
+{
+	    cout<<"Type in an option between: 1 to 7"<<endl;
 		
 		int inputOption;
 		cin>>inputOption;
@@ -47,8 +34,16 @@ int main()
 		cout<<"You selected: "<<inputOption<<endl;
 		
 		cout<<endl;
-		
-		if(inputOption==0){
+		return inputOption;
+}
+
+bool processInput(int inputOption)
+{
+	bool condition;
+	
+    if(inputOption<=6)
+	{
+       if(inputOption==0){
 			cout<<"Invalid Choice.Choose 1-7"<<endl;
 			cout<<endl;
 			
@@ -81,15 +76,36 @@ int main()
 		if(inputOption==6){
 			cout<<"Going to next time frame!"<<endl;
 			cout<<endl;
-		}
-		if(inputOption==7){
-			cout<<"Exit the app:)"<<endl;
-			cout<<endl;
-			condition=false;
-		}
+		}	
 		
+		condition =true;
+		return condition;  	
+	}	
+	else{	
+		cout<<"Exit the app:)"<<endl;
+		cout<<endl;
+		condition=false;
+		return condition;	
+		}	
+}
+
+
+int main()
+{
+	bool condition=true;
+	//putting everything in a while loop to run an infinite loop so that our application keep running
+	
+	while(condition)
+	{
+		printMenu();
 		
+		cout<<"===================="<<endl;
+	
+        int inputOption = getUserOption();
+	
+	    condition =	processInput(inputOption);	
 	}
+	
 	
 	
 }
