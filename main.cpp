@@ -3,9 +3,9 @@ using namespace std;
 // namespace: contains lots of ready made components like: functions and classes etc 
 // a cross platform library
 
+/** Print Menu */
 void printMenu()
 {
-	//Print Menu
 		
 		// 1. Print Help:
 		cout<<"1: Print Help"<<endl;	
@@ -24,6 +24,53 @@ void printMenu()
 		
 }
 
+// Menu Functions
+void printHelp()
+{
+	cout<<"Help! Your aim is to make money.Analyse the market, make bids and offers"<<endl;
+	cout<<endl;
+}
+
+void printMarketStats()
+{
+	cout<<"Market looks good."<<endl;
+	cout<<endl;
+}
+
+void enterOffer()
+{
+	cout<<"Mark an offer.Enter amount."<<endl;
+	cout<<endl;
+}
+
+void enterBid()
+{
+	cout<<"Make a bid.Enter Amount."<<endl;
+	cout<<endl;
+	
+}
+
+void printWallet()
+{
+	cout<<"Your wallet is empty!"<<endl;
+	cout<<endl;
+}
+
+void goToNextTimeframe()
+{
+	cout<<"Going to next time frame!"<<endl;
+	cout<<endl;
+}
+
+bool exit()
+{
+	cout<<"Exit the app:)"<<endl;
+	cout<<endl;
+	bool condition =false;
+	return condition;
+}
+
+// get input from user 
 int getUserOption()
 {
 	    cout<<"Type in an option between: 1 to 7"<<endl;
@@ -37,6 +84,7 @@ int getUserOption()
 		return inputOption;
 }
 
+// process input and do relevant action
 bool processInput(int inputOption)
 {
 	bool condition;
@@ -49,47 +97,47 @@ bool processInput(int inputOption)
 			
 		}
 		
-		if(inputOption==1){
-			cout<<"Help! Your aim is to make money.Analyse the market, make bids and offers"<<endl;
-		    cout<<endl;
+		if(inputOption==1)
+		{
+			printHelp();
 		}
 		
-		if(inputOption==2){
-			cout<<"Market looks good."<<endl;
-			cout<<endl;
+		if(inputOption==2)
+		{
+		    printMarketStats();
 		}
 		
-		if(inputOption==3){
-			cout<<"Mark and offer.Enter amount."<<endl;
-			cout<<endl;
+		if(inputOption==3)
+		{
+			enterOffer();
 		}
 		
-		if(inputOption==4){
-			cout<<"Make a bid.Enter Amount."<<endl;
-			cout<<endl;
+		if(inputOption==4)
+		{
+			enterBid();
 		}
 		
-		if(inputOption==5){
-			cout<<"Your wallet is empty!"<<endl;
-			cout<<endl;
+		if(inputOption==5)
+		{
+		    printWallet();
 		}
-		if(inputOption==6){
-			cout<<"Going to next time frame!"<<endl;
-			cout<<endl;
+		if(inputOption==6)
+		{			
+		   goToNextTimeframe();	
+		
 		}	
 		
 		condition =true;
 		return condition;  	
 	}	
-	else{	
-		cout<<"Exit the app:)"<<endl;
-		cout<<endl;
-		condition=false;
-		return condition;	
-		}	
+	else
+	{	
+		condition =exit();	
+		return condition;
+	}	
 }
 
-
+// main function:
 int main()
 {
 	bool condition=true;
